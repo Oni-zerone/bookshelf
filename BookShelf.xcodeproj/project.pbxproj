@@ -12,6 +12,7 @@
 		97A75B4D1FAD350B008E6E4D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 97A75B4B1FAD350B008E6E4D /* Main.storyboard */; };
 		97A75B4F1FAD350B008E6E4D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 97A75B4E1FAD350B008E6E4D /* Assets.xcassets */; };
 		97A75B521FAD350B008E6E4D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 97A75B501FAD350B008E6E4D /* LaunchScreen.storyboard */; };
+		97A75B5B1FAD3528008E6E4D /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97A75B5A1FAD3528008E6E4D /* Model.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +23,7 @@
 		97A75B4E1FAD350B008E6E4D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		97A75B511FAD350B008E6E4D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		97A75B531FAD350B008E6E4D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		97A75B5A1FAD3528008E6E4D /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,6 +56,7 @@
 		97A75B461FAD350B008E6E4D /* BookShelf */ = {
 			isa = PBXGroup;
 			children = (
+				97A75B591FAD3511008E6E4D /* Model */,
 				97A75B471FAD350B008E6E4D /* AppDelegate.swift */,
 				97A75B491FAD350B008E6E4D /* ViewController.swift */,
 				97A75B4B1FAD350B008E6E4D /* Main.storyboard */,
@@ -62,6 +65,22 @@
 				97A75B531FAD350B008E6E4D /* Info.plist */,
 			);
 			path = BookShelf;
+			sourceTree = "<group>";
+		};
+		97A75B591FAD3511008E6E4D /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				97A75B5C1FAD3545008E6E4D /* Networking */,
+				97A75B5A1FAD3528008E6E4D /* Model.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		97A75B5C1FAD3545008E6E4D /* Networking */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Networking;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -136,6 +155,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				97A75B5B1FAD3528008E6E4D /* Model.swift in Sources */,
 				97A75B4A1FAD350B008E6E4D /* ViewController.swift in Sources */,
 				97A75B481FAD350B008E6E4D /* AppDelegate.swift in Sources */,
 			);

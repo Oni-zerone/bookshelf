@@ -15,6 +15,7 @@
 		97A75B5B1FAD3528008E6E4D /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97A75B5A1FAD3528008E6E4D /* Model.swift */; };
 		97A75B5E1FAD3B9A008E6E4D /* APIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97A75B5D1FAD3B9A008E6E4D /* APIManager.swift */; };
 		97A75B611FAD3C0C008E6E4D /* ModelError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97A75B601FAD3C0C008E6E4D /* ModelError.swift */; };
+		97A75B631FAD3DA3008E6E4D /* APIRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97A75B621FAD3DA3008E6E4D /* APIRequest.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +29,7 @@
 		97A75B5A1FAD3528008E6E4D /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
 		97A75B5D1FAD3B9A008E6E4D /* APIManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIManager.swift; sourceTree = "<group>"; };
 		97A75B601FAD3C0C008E6E4D /* ModelError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelError.swift; sourceTree = "<group>"; };
+		97A75B621FAD3DA3008E6E4D /* APIRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIRequest.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -85,6 +87,7 @@
 			isa = PBXGroup;
 			children = (
 				97A75B5D1FAD3B9A008E6E4D /* APIManager.swift */,
+				97A75B621FAD3DA3008E6E4D /* APIRequest.swift */,
 			);
 			path = Networking;
 			sourceTree = "<group>";
@@ -173,6 +176,7 @@
 				97A75B5B1FAD3528008E6E4D /* Model.swift in Sources */,
 				97A75B611FAD3C0C008E6E4D /* ModelError.swift in Sources */,
 				97A75B4A1FAD350B008E6E4D /* ViewController.swift in Sources */,
+				97A75B631FAD3DA3008E6E4D /* APIRequest.swift in Sources */,
 				97A75B481FAD350B008E6E4D /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

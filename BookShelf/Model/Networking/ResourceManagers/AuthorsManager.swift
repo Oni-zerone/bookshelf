@@ -12,30 +12,32 @@ typealias AuthorsManager = APIManager
 
 extension AuthorsManager {
     
-    static func getAuthors(for page: Int = 0, session: URLSession = Config.session, completion: @escaping(Array<Author>?, Error?) -> ()) {
+    static func getAuthors(for page: Int = 0, session: URLSession = Config.session, completion: @escaping(Int, Int, Array<Author>?, Error?) -> ()) {
         
         guard let URL = APIManager.URLForResource(resourcePath: "authors.php", with: ["page" : "\(page)"]) else {
             
-            return completion(nil, NSError.invalidPath(ErrorDomain))
+            return completion(page, NSNotFound, nil, NSError.invalidPath(ErrorDomain))
         }
         
-        let task = session.dataTask(with: APIRequest(url: URL) as URLRequest, completionHandler: APIManager.responseArrayCheck({ (response, error) in
+        let task = session.dataTask(with: APIRequest(url: URL) as URLRequest, completionHandler: APIManager.responseDictionaryCheck({ (response, error) in
             
             if let e = error {
                 
-                return completion(nil, e)
+                return completion(page, NSNotFound, nil, e)
             }
             
-            guard let items = response as? Array<Dictionary<String, Any>> else {
+            guard let responsePage = response?["page"] as? Int,
+                let responseCount = response?["count"] as? Int,
+                let items = response?["authors"] as? Array<Dictionary<String, Any>> else {
                 
-                return completion(nil, NSError.invalidContent(ErrorDomain))
+                return completion(page, NSNotFound, nil, NSError.invalidContent(ErrorDomain))
             }
             
-            let ingredients = items.flatMap({ (item) -> Author? in
+            let authors = items.flatMap({ (item) -> Author? in
                 return Author(resource: item)
             })
             
-            completion(ingredients, nil)
+            completion(responsePage, responseCount, authors, nil)
         }))
         
         task.resume()

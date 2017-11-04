@@ -41,3 +41,12 @@ extension Author: Equatable {
         return lhs.id == rhs.id
     }
 }
+
+extension Author: Hashable {
+    var hashValue: Int {
+        return id
+    }
+    
+    
+    
+}

@@ -23,7 +23,7 @@ extension AuthorsManager {
             
             if let e = error {
                 
-                return completion(page, NSNotFound, nil, e)
+                return completion(page, nil, e)
             }
             
             guard let responsePage = response?["page"] as? Int,
@@ -37,6 +37,31 @@ extension AuthorsManager {
             })
             
             completion(responsePage, authors, nil)
+        }))
+        
+        task.resume()
+    }
+    
+    static func getAuthorsPageCount(session: URLSession = Config.session, completion: @escaping(Int, Error?) -> ()) {
+        
+        guard let URL = APIManager.URLForResource(resourcePath: "authors_count.php") else {
+            
+            return completion(NSNotFound, NSError.invalidPath(ErrorDomain))
+        }
+        
+        let task = session.dataTask(with: APIRequest(url: URL) as URLRequest, completionHandler: APIManager.responseDictionaryCheck({ (response, error) in
+            
+            if let e = error {
+                
+                return completion(NSNotFound, e)
+            }
+            
+            guard let pageCount = response?["count"] as? Int else {
+                    
+                    return completion(NSNotFound, NSError.invalidContent(ErrorDomain))
+            }
+            
+            completion(pageCount, nil)
         }))
         
         task.resume()

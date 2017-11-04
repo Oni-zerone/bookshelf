@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		97A75B481FAD350B008E6E4D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97A75B471FAD350B008E6E4D /* AppDelegate.swift */; };
-		97A75B4A1FAD350B008E6E4D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97A75B491FAD350B008E6E4D /* ViewController.swift */; };
+		97A75B4A1FAD350B008E6E4D /* AuthorsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97A75B491FAD350B008E6E4D /* AuthorsController.swift */; };
 		97A75B4D1FAD350B008E6E4D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 97A75B4B1FAD350B008E6E4D /* Main.storyboard */; };
 		97A75B4F1FAD350B008E6E4D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 97A75B4E1FAD350B008E6E4D /* Assets.xcassets */; };
 		97A75B521FAD350B008E6E4D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 97A75B501FAD350B008E6E4D /* LaunchScreen.storyboard */; };
@@ -23,7 +23,7 @@
 /* Begin PBXFileReference section */
 		97A75B441FAD350B008E6E4D /* BookShelf.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BookShelf.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		97A75B471FAD350B008E6E4D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		97A75B491FAD350B008E6E4D /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		97A75B491FAD350B008E6E4D /* AuthorsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthorsController.swift; sourceTree = "<group>"; };
 		97A75B4C1FAD350B008E6E4D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		97A75B4E1FAD350B008E6E4D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		97A75B511FAD350B008E6E4D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -66,9 +66,9 @@
 		97A75B461FAD350B008E6E4D /* BookShelf */ = {
 			isa = PBXGroup;
 			children = (
-				97A75B591FAD3511008E6E4D /* Model */,
 				97A75B471FAD350B008E6E4D /* AppDelegate.swift */,
-				97A75B491FAD350B008E6E4D /* ViewController.swift */,
+				97A75B591FAD3511008E6E4D /* Model */,
+				97A75B6E1FADF275008E6E4D /* ViewControllers */,
 				97A75B4B1FAD350B008E6E4D /* Main.storyboard */,
 				97A75B4E1FAD350B008E6E4D /* Assets.xcassets */,
 				97A75B501FAD350B008E6E4D /* LaunchScreen.storyboard */,
@@ -122,6 +122,14 @@
 			path = ResourceManagers;
 			sourceTree = "<group>";
 		};
+		97A75B6E1FADF275008E6E4D /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				97A75B491FAD350B008E6E4D /* AuthorsController.swift */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -154,6 +162,7 @@
 				TargetAttributes = {
 					97A75B431FAD350B008E6E4D = {
 						CreatedOnToolsVersion = 9.0;
+						LastSwiftMigration = 0900;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -198,7 +207,7 @@
 				97A75B5E1FAD3B9A008E6E4D /* APIManager.swift in Sources */,
 				97A75B5B1FAD3528008E6E4D /* Model.swift in Sources */,
 				97A75B611FAD3C0C008E6E4D /* ModelError.swift in Sources */,
-				97A75B4A1FAD350B008E6E4D /* ViewController.swift in Sources */,
+				97A75B4A1FAD350B008E6E4D /* AuthorsController.swift in Sources */,
 				97A75B631FAD3DA3008E6E4D /* APIRequest.swift in Sources */,
 				97A75B661FAD3EBC008E6E4D /* Author.swift in Sources */,
 				97A75B481FAD350B008E6E4D /* AppDelegate.swift in Sources */,
@@ -338,12 +347,15 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 6RS7DS4QV5;
 				INFOPLIST_FILE = BookShelf/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = it.studiout.tests.BookShelf;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -353,12 +365,14 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 6RS7DS4QV5;
 				INFOPLIST_FILE = BookShelf/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = it.studiout.tests.BookShelf;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};

@@ -81,9 +81,17 @@ struct APIManager {
         }
     }
     
-    static internal func URLForResource(resourcePath: String) -> URL? {
+    static internal func URLForResource(resourcePath: String, with parameters:[String: String] = [:]) -> URL? {
         
-        let fullPath = "\(Config.scheme!)://\(Config.host!)/\(Config.basePath!)/\(resourcePath)"
+        var parametersString = ""
+        
+        parameters.forEach { (key, value) in
+            
+            parametersString += parametersString.characters.count > 0 ? "?" : "&"
+            parametersString += "\(key)=\(value)"
+        }
+        
+        let fullPath = "\(Config.scheme!)://\(Config.host!)/\(Config.basePath!)/\(resourcePath)\(parametersString)"
         return URL(string:fullPath)
     }
 }

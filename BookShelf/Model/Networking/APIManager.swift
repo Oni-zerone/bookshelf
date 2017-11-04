@@ -87,7 +87,7 @@ struct APIManager {
         
         parameters.forEach { (key, value) in
             
-            parametersString += parametersString.characters.count > 0 ? "?" : "&"
+            parametersString += parametersString.characters.count < 1 ? "?" : "&"
             parametersString += "\(key)=\(value)"
         }
         

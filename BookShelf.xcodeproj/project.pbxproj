@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		974DE2301FAF59A400419575 /* BooksViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 974DE22F1FAF59A400419575 /* BooksViewController.swift */; };
 		977C4FF81FAF47C900A3B602 /* AuthorsDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 977C4FF71FAF47C900A3B602 /* AuthorsDataSource.swift */; };
 		977C4FFD1FAF482900A3B602 /* DetailTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 977C4FFB1FAF482900A3B602 /* DetailTableViewCell.swift */; };
 		977C4FFE1FAF482900A3B602 /* DetailTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 977C4FFC1FAF482900A3B602 /* DetailTableViewCell.xib */; };
@@ -30,6 +31,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		974DE22F1FAF59A400419575 /* BooksViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BooksViewController.swift; sourceTree = "<group>"; };
 		977C4FF61FAF47AF00A3B602 /* BaseDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseDataSource.swift; sourceTree = "<group>"; };
 		977C4FF71FAF47C900A3B602 /* AuthorsDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthorsDataSource.swift; sourceTree = "<group>"; };
 		977C4FFB1FAF482900A3B602 /* DetailTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailTableViewCell.swift; sourceTree = "<group>"; };
@@ -184,6 +186,7 @@
 			children = (
 				977C4FF51FAF479200A3B602 /* DataSources */,
 				97A75B491FAD350B008E6E4D /* AuthorsController.swift */,
+				974DE22F1FAF59A400419575 /* BooksViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -285,6 +288,7 @@
 				97A75B5B1FAD3528008E6E4D /* Model.swift in Sources */,
 				97A75B611FAD3C0C008E6E4D /* ModelError.swift in Sources */,
 				97A75B4A1FAD350B008E6E4D /* AuthorsController.swift in Sources */,
+				974DE2301FAF59A400419575 /* BooksViewController.swift in Sources */,
 				977C50011FAF486C00A3B602 /* AuthorCell.swift in Sources */,
 				97A75B631FAD3DA3008E6E4D /* APIRequest.swift in Sources */,
 				977C4FF81FAF47C900A3B602 /* AuthorsDataSource.swift in Sources */,

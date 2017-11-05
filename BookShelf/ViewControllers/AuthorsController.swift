@@ -10,6 +10,10 @@ import UIKit
 
 class AuthorsController: UIViewController {
 
+    struct Segue {
+        static let books = "Books"
+    }
+    
     @IBOutlet weak var waitingContainer: UIView!
     @IBOutlet weak var waitingIndicator: UIActivityIndicatorView!
     
@@ -47,6 +51,14 @@ class AuthorsController: UIViewController {
         self.didUpdateSort(sender: nil)
     }
 
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        if let selectedRow = self.tableView.indexPathForSelectedRow {
+            self.tableView.deselectRow(at: selectedRow, animated: true)
+        }
+    }
+    
     private func setupUI() {
         
         self.waitingContainer.layer.cornerRadius = 10
@@ -82,11 +94,30 @@ class AuthorsController: UIViewController {
             let sortedAuthors = AuthorSorter.sortedAuthors(authors, for: parameter)
             self.dataSource?.items = sortedAuthors
         }
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         
+        guard segue.identifier == Segue.books,
+            let indexPath = sender as? IndexPath else {
+            return
+        }
+        
+        guard let viewController = segue.destination as? BooksViewController,
+            let author = self.dataSource?.items[indexPath.item] else {
+                return
+        }
+        
+        viewController.author = author
     }
 }
 
 extension AuthorsController: UITableViewDelegate {
+
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+        self.performSegue(withIdentifier: Segue.books, sender: indexPath)
+    }
     
 }
 

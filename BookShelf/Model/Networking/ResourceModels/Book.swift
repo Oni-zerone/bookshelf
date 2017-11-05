@@ -20,7 +20,7 @@ struct Book {
     let discount: Double
     let imageURL: URL?
     
-    init?(resources: Dictionary<String, Any>) {
+    init?(resource: Dictionary<String, Any>) {
         
         guard let ISBN = resources["ISBN"] as? Int,
             let title = resources["title"] as? String,
@@ -29,7 +29,7 @@ struct Book {
             let year = resources["year"] as? Int,
             let pages = resources["pages"] as? Int,
             let price = resources["price"] as? Double,
-            let discount = resources["discount"] as? Double
+            let discount = resources["discount"] as? Double,
             let imagePath = resources["image_url"] as? String else {
                 return nil
         }

@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		435F1A04A06C7963E1E405A9 /* Pods_BookShelf.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 939866EF151F043C8B20267C /* Pods_BookShelf.framework */; };
+		97143E3D1FAFB01B0096AFCC /* LoginManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97143E3C1FAFB01B0096AFCC /* LoginManager.swift */; };
+		97143E3F1FAFB0D90096AFCC /* RequestManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97143E3E1FAFB0D90096AFCC /* RequestManager.swift */; };
+		97143E411FAFB14B0096AFCC /* LoginRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97143E401FAFB14B0096AFCC /* LoginRequest.swift */; };
 		974DE2301FAF59A400419575 /* BooksViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 974DE22F1FAF59A400419575 /* BooksViewController.swift */; };
 		974DE2321FAF5C4D00419575 /* BookSorter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 974DE2311FAF5C4D00419575 /* BookSorter.swift */; };
 		974DE2351FAF5CF600419575 /* Book.swift in Sources */ = {isa = PBXBuildFile; fileRef = 974DE2341FAF5CF600419575 /* Book.swift */; };
@@ -42,6 +45,9 @@
 		52B0B8AC95E4D70DDD820D48 /* Pods-BookShelf.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BookShelf.release.xcconfig"; path = "Pods/Target Support Files/Pods-BookShelf/Pods-BookShelf.release.xcconfig"; sourceTree = "<group>"; };
 		87613F39C81D2FF714B593EC /* Pods-BookShelf.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BookShelf.debug.xcconfig"; path = "Pods/Target Support Files/Pods-BookShelf/Pods-BookShelf.debug.xcconfig"; sourceTree = "<group>"; };
 		939866EF151F043C8B20267C /* Pods_BookShelf.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BookShelf.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		97143E3C1FAFB01B0096AFCC /* LoginManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginManager.swift; sourceTree = "<group>"; };
+		97143E3E1FAFB0D90096AFCC /* RequestManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestManager.swift; sourceTree = "<group>"; };
+		97143E401FAFB14B0096AFCC /* LoginRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginRequest.swift; sourceTree = "<group>"; };
 		974DE22F1FAF59A400419575 /* BooksViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BooksViewController.swift; sourceTree = "<group>"; };
 		974DE2311FAF5C4D00419575 /* BookSorter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookSorter.swift; sourceTree = "<group>"; };
 		974DE2341FAF5CF600419575 /* Book.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Book.swift; sourceTree = "<group>"; };
@@ -86,6 +92,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		97143E3B1FAFB0060096AFCC /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				97143E3C1FAFB01B0096AFCC /* LoginManager.swift */,
+				97143E401FAFB14B0096AFCC /* LoginRequest.swift */,
+			);
+			path = Login;
+			sourceTree = "<group>";
+		};
 		974DE23A1FAF6CA100419575 /* BookTableViewCell */ = {
 			isa = PBXGroup;
 			children = (
@@ -180,10 +195,12 @@
 		97A75B5C1FAD3545008E6E4D /* Networking */ = {
 			isa = PBXGroup;
 			children = (
+				97143E3B1FAFB0060096AFCC /* Login */,
 				97A75B671FAD4128008E6E4D /* ResourceManagers */,
 				97A75B641FAD3EA6008E6E4D /* ResourceModels */,
 				97A75B5D1FAD3B9A008E6E4D /* APIManager.swift */,
 				97A75B621FAD3DA3008E6E4D /* APIRequest.swift */,
+				97143E3E1FAFB0D90096AFCC /* RequestManager.swift */,
 			);
 			path = Networking;
 			sourceTree = "<group>";
@@ -394,6 +411,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				97143E411FAFB14B0096AFCC /* LoginRequest.swift in Sources */,
 				97A75B691FAD413F008E6E4D /* AuthorsManager.swift in Sources */,
 				974DE23E1FAF6D9B00419575 /* BookTableViewCell.swift in Sources */,
 				97A75B711FADF776008E6E4D /* SwitchControl.swift in Sources */,
@@ -409,11 +427,13 @@
 				977C4FF81FAF47C900A3B602 /* AuthorsDataSource.swift in Sources */,
 				97A75B661FAD3EBC008E6E4D /* Author.swift in Sources */,
 				974DE2351FAF5CF600419575 /* Book.swift in Sources */,
+				97143E3F1FAFB0D90096AFCC /* RequestManager.swift in Sources */,
 				974DE2321FAF5C4D00419575 /* BookSorter.swift in Sources */,
 				977C50041FAF492400A3B602 /* AuthorTableViewCell.swift in Sources */,
 				974DE2401FAF791700419575 /* BookDetailViewController.swift in Sources */,
 				977C4FFF1FAF485A00A3B602 /* BaseDataSource.swift in Sources */,
 				97A75B731FAF1C99008E6E4D /* EnumCollection.swift in Sources */,
+				97143E3D1FAFB01B0096AFCC /* LoginManager.swift in Sources */,
 				977C4FFD1FAF482900A3B602 /* DetailTableViewCell.swift in Sources */,
 				97A75B761FAF3F1C008E6E4D /* AuthorSorter.swift in Sources */,
 				974DE2391FAF6C4300419575 /* BooksDataSource.swift in Sources */,

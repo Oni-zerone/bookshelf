@@ -13,15 +13,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
 
-
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         
         //Setup APIManager Config
-        APIManager.Config.scheme = "http"
-        APIManager.Config.host = "www.studiout.it"
-        APIManager.Config.basePath = "bookshelf"
-        
-        return true
+        APIManager.config = RequestManagerConfiguration(scheme: "http", host: "www.studiout.it", basePath: "bookshelf")
+        LoginManager.config = RequestManagerConfiguration(scheme: "http", host: "www.studiout.it", basePath: "bookshelf")
     }
 
     func applicationWillResignActive(_ application: UIApplication) {
@@ -45,7 +41,5 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func applicationWillTerminate(_ application: UIApplication) {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
     }
-
-
 }
 

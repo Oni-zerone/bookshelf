@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		974DE2301FAF59A400419575 /* BooksViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 974DE22F1FAF59A400419575 /* BooksViewController.swift */; };
+		974DE2321FAF5C4D00419575 /* BookSorter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 974DE2311FAF5C4D00419575 /* BookSorter.swift */; };
+		974DE2351FAF5CF600419575 /* Book.swift in Sources */ = {isa = PBXBuildFile; fileRef = 974DE2341FAF5CF600419575 /* Book.swift */; };
 		977C4FF81FAF47C900A3B602 /* AuthorsDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 977C4FF71FAF47C900A3B602 /* AuthorsDataSource.swift */; };
 		977C4FFD1FAF482900A3B602 /* DetailTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 977C4FFB1FAF482900A3B602 /* DetailTableViewCell.swift */; };
 		977C4FFE1FAF482900A3B602 /* DetailTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 977C4FFC1FAF482900A3B602 /* DetailTableViewCell.xib */; };
@@ -32,6 +34,8 @@
 
 /* Begin PBXFileReference section */
 		974DE22F1FAF59A400419575 /* BooksViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BooksViewController.swift; sourceTree = "<group>"; };
+		974DE2311FAF5C4D00419575 /* BookSorter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookSorter.swift; sourceTree = "<group>"; };
+		974DE2341FAF5CF600419575 /* Book.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Book.swift; sourceTree = "<group>"; };
 		977C4FF61FAF47AF00A3B602 /* BaseDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseDataSource.swift; sourceTree = "<group>"; };
 		977C4FF71FAF47C900A3B602 /* AuthorsDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthorsDataSource.swift; sourceTree = "<group>"; };
 		977C4FFB1FAF482900A3B602 /* DetailTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailTableViewCell.swift; sourceTree = "<group>"; };
@@ -169,6 +173,7 @@
 			isa = PBXGroup;
 			children = (
 				97A75B651FAD3EBC008E6E4D /* Author.swift */,
+				974DE2341FAF5CF600419575 /* Book.swift */,
 			);
 			path = ResourceModels;
 			sourceTree = "<group>";
@@ -204,6 +209,7 @@
 			isa = PBXGroup;
 			children = (
 				97A75B751FAF3F1C008E6E4D /* AuthorSorter.swift */,
+				974DE2311FAF5C4D00419575 /* BookSorter.swift */,
 			);
 			path = Sorter;
 			sourceTree = "<group>";
@@ -293,6 +299,8 @@
 				97A75B631FAD3DA3008E6E4D /* APIRequest.swift in Sources */,
 				977C4FF81FAF47C900A3B602 /* AuthorsDataSource.swift in Sources */,
 				97A75B661FAD3EBC008E6E4D /* Author.swift in Sources */,
+				974DE2351FAF5CF600419575 /* Book.swift in Sources */,
+				974DE2321FAF5C4D00419575 /* BookSorter.swift in Sources */,
 				977C50041FAF492400A3B602 /* AuthorTableViewCell.swift in Sources */,
 				977C4FFF1FAF485A00A3B602 /* BaseDataSource.swift in Sources */,
 				97A75B731FAF1C99008E6E4D /* EnumCollection.swift in Sources */,

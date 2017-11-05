@@ -115,9 +115,7 @@ class AuthorsController: UIViewController {
 extension AuthorsController: UITableViewDelegate {
 
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        
         self.performSegue(withIdentifier: Segue.books, sender: indexPath)
-    }
-    
+    }    
 }
 

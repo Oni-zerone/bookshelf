@@ -11,6 +11,10 @@
 		974DE2321FAF5C4D00419575 /* BookSorter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 974DE2311FAF5C4D00419575 /* BookSorter.swift */; };
 		974DE2351FAF5CF600419575 /* Book.swift in Sources */ = {isa = PBXBuildFile; fileRef = 974DE2341FAF5CF600419575 /* Book.swift */; };
 		974DE2371FAF619800419575 /* BooksManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 974DE2361FAF619800419575 /* BooksManager.swift */; };
+		974DE2391FAF6C4300419575 /* BooksDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 974DE2381FAF6C4300419575 /* BooksDataSource.swift */; };
+		974DE23C1FAF6CB700419575 /* BookCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 974DE23B1FAF6CB700419575 /* BookCell.swift */; };
+		974DE23E1FAF6D9B00419575 /* BookTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 974DE23D1FAF6D9B00419575 /* BookTableViewCell.swift */; };
+		974DE2401FAF791700419575 /* BookDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 974DE23F1FAF791700419575 /* BookDetailViewController.swift */; };
 		977C4FF81FAF47C900A3B602 /* AuthorsDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 977C4FF71FAF47C900A3B602 /* AuthorsDataSource.swift */; };
 		977C4FFD1FAF482900A3B602 /* DetailTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 977C4FFB1FAF482900A3B602 /* DetailTableViewCell.swift */; };
 		977C4FFE1FAF482900A3B602 /* DetailTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 977C4FFC1FAF482900A3B602 /* DetailTableViewCell.xib */; };
@@ -38,6 +42,10 @@
 		974DE2311FAF5C4D00419575 /* BookSorter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookSorter.swift; sourceTree = "<group>"; };
 		974DE2341FAF5CF600419575 /* Book.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Book.swift; sourceTree = "<group>"; };
 		974DE2361FAF619800419575 /* BooksManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BooksManager.swift; sourceTree = "<group>"; };
+		974DE2381FAF6C4300419575 /* BooksDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BooksDataSource.swift; sourceTree = "<group>"; };
+		974DE23B1FAF6CB700419575 /* BookCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookCell.swift; sourceTree = "<group>"; };
+		974DE23D1FAF6D9B00419575 /* BookTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookTableViewCell.swift; sourceTree = "<group>"; };
+		974DE23F1FAF791700419575 /* BookDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookDetailViewController.swift; sourceTree = "<group>"; };
 		977C4FF61FAF47AF00A3B602 /* BaseDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseDataSource.swift; sourceTree = "<group>"; };
 		977C4FF71FAF47C900A3B602 /* AuthorsDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthorsDataSource.swift; sourceTree = "<group>"; };
 		977C4FFB1FAF482900A3B602 /* DetailTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailTableViewCell.swift; sourceTree = "<group>"; };
@@ -73,11 +81,21 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		974DE23A1FAF6CA100419575 /* BookTableViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				974DE23B1FAF6CB700419575 /* BookCell.swift */,
+				974DE23D1FAF6D9B00419575 /* BookTableViewCell.swift */,
+			);
+			path = BookTableViewCell;
+			sourceTree = "<group>";
+		};
 		977C4FF51FAF479200A3B602 /* DataSources */ = {
 			isa = PBXGroup;
 			children = (
 				977C4FF61FAF47AF00A3B602 /* BaseDataSource.swift */,
 				977C4FF71FAF47C900A3B602 /* AuthorsDataSource.swift */,
+				974DE2381FAF6C4300419575 /* BooksDataSource.swift */,
 			);
 			path = DataSources;
 			sourceTree = "<group>";
@@ -87,6 +105,7 @@
 			children = (
 				977C50021FAF48F600A3B602 /* DetailCell */,
 				977C4FFA1FAF480C00A3B602 /* AuthorTableViewCell */,
+				974DE23A1FAF6CA100419575 /* BookTableViewCell */,
 			);
 			path = TableViewCells;
 			sourceTree = "<group>";
@@ -195,6 +214,7 @@
 				977C4FF51FAF479200A3B602 /* DataSources */,
 				97A75B491FAD350B008E6E4D /* AuthorsController.swift */,
 				974DE22F1FAF59A400419575 /* BooksViewController.swift */,
+				974DE23F1FAF791700419575 /* BookDetailViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -292,7 +312,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				97A75B691FAD413F008E6E4D /* AuthorsManager.swift in Sources */,
+				974DE23E1FAF6D9B00419575 /* BookTableViewCell.swift in Sources */,
 				97A75B711FADF776008E6E4D /* SwitchControl.swift in Sources */,
+				974DE23C1FAF6CB700419575 /* BookCell.swift in Sources */,
 				974DE2371FAF619800419575 /* BooksManager.swift in Sources */,
 				97A75B5E1FAD3B9A008E6E4D /* APIManager.swift in Sources */,
 				97A75B5B1FAD3528008E6E4D /* Model.swift in Sources */,
@@ -306,10 +328,12 @@
 				974DE2351FAF5CF600419575 /* Book.swift in Sources */,
 				974DE2321FAF5C4D00419575 /* BookSorter.swift in Sources */,
 				977C50041FAF492400A3B602 /* AuthorTableViewCell.swift in Sources */,
+				974DE2401FAF791700419575 /* BookDetailViewController.swift in Sources */,
 				977C4FFF1FAF485A00A3B602 /* BaseDataSource.swift in Sources */,
 				97A75B731FAF1C99008E6E4D /* EnumCollection.swift in Sources */,
 				977C4FFD1FAF482900A3B602 /* DetailTableViewCell.swift in Sources */,
 				97A75B761FAF3F1C008E6E4D /* AuthorSorter.swift in Sources */,
+				974DE2391FAF6C4300419575 /* BooksDataSource.swift in Sources */,
 				97A75B481FAD350B008E6E4D /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

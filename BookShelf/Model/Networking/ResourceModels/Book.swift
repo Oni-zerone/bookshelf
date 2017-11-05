@@ -12,7 +12,7 @@ struct Book {
     
     let ISBN: Int
     let title: String
-    let editor: String
+    let publisher: String
     let series: String
     let year: Int
     let pages: Int
@@ -22,21 +22,21 @@ struct Book {
     
     init?(resource: Dictionary<String, Any>) {
         
-        guard let ISBN = resources["ISBN"] as? Int,
-            let title = resources["title"] as? String,
-            let editor = resources["editor"] as? String,
-            let series = resources["series"] as? String,
-            let year = resources["year"] as? Int,
-            let pages = resources["pages"] as? Int,
-            let price = resources["price"] as? Double,
-            let discount = resources["discount"] as? Double,
-            let imagePath = resources["image_url"] as? String else {
+        guard let ISBN = resource["ISBN"] as? Int,
+            let title = resource["title"] as? String,
+            let publisher = resource["publisher"] as? String,
+            let series = resource["series"] as? String,
+            let year = resource["year"] as? Int,
+            let pages = resource["pages"] as? Int,
+            let price = resource["price"] as? Double,
+            let discount = resource["discount"] as? Double,
+            let imagePath = resource["image_URL"] as? String else {
                 return nil
         }
         
         self.ISBN = ISBN
         self.title = title
-        self.editor = editor
+        self.publisher = publisher
         self.series = series
         self.year = year
         self.pages = pages
@@ -56,13 +56,15 @@ struct Book {
 }
 
 extension Book: Equatable {
+    
     static func ==(lhs: Book, rhs: Book) -> Bool {
         return lhs.ISBN == rhs.ISBN
     }
-    
-    
 }
 
-extenion Book: Hashable {
+extension Book: Hashable {
     
+    var hashValue: Int {
+        return self.ISBN
+    }
 }

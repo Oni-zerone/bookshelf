@@ -8,10 +8,9 @@
 
 import UIKit
 
-@IBDesignable
 class SwitchControl: UIControl {
 
-    @IBInspectable var statuses: Array<String> = [] {
+    var statuses: Array<String> = [] {
         didSet {
             self.selectedStatus = 0
         }

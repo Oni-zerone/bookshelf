@@ -21,4 +21,27 @@ class BookSorter {
         static let list = ["Titolo", "Anno", "Pagine", "Prezzo", "Discount"]
     }
     
+    static func sortedBooks(_ books:Set<Book>, for parameter: SortParameter) -> Array<Book> {
+     
+        return books.sorted(by: { (first, second) -> Bool in
+            
+            switch parameter {
+             
+            case .title:
+                return first.title < second.title
+                
+            case .year:
+                return first.year < second.year
+                
+            case .pages:
+                return first.pages < second.pages
+                
+            case .price:
+                return first.discountedPrice < second.discountedPrice
+                
+            case .discount:
+                return first.discount < second.discount
+            }
+        })
+    }
 }

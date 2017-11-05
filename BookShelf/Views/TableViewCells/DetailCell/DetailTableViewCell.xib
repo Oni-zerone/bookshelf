@@ -26,7 +26,7 @@
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="260" verticalHuggingPriority="260" text="Label" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DXp-eX-hy2">
-                        <rect key="frame" x="274.5" y="16" width="37.5" height="18"/>
+                        <rect key="frame" x="274" y="16" width="37.5" height="18"/>
                         <fontDescription key="fontDescription" type="system" pointSize="15"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
@@ -43,25 +43,34 @@
                         <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <nil key="highlightedColor"/>
                     </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="260" verticalHuggingPriority="260" text="" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pep-Lm-OLY">
+                        <rect key="frame" x="269" y="34" width="0.0" height="0.0"/>
+                        <fontDescription key="fontDescription" type="system" weight="light" pointSize="15"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
                 </subviews>
                 <constraints>
                     <constraint firstItem="DXp-eX-hy2" firstAttribute="baseline" secondItem="Jjr-Fg-Wf3" secondAttribute="baseline" id="Cog-gm-YfH"/>
+                    <constraint firstItem="DXp-eX-hy2" firstAttribute="baseline" secondItem="pep-Lm-OLY" secondAttribute="baseline" id="KQ7-1U-zTs"/>
                     <constraint firstItem="WFb-4Q-Czi" firstAttribute="top" secondItem="Jjr-Fg-Wf3" secondAttribute="bottom" constant="16" id="OAr-oc-kWT"/>
                     <constraint firstItem="WFb-4Q-Czi" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" id="PF7-Ox-Ukc"/>
                     <constraint firstItem="2hF-gt-tRm" firstAttribute="baseline" secondItem="WFb-4Q-Czi" secondAttribute="baseline" id="RzS-QO-i5e"/>
                     <constraint firstAttribute="bottomMargin" secondItem="WFb-4Q-Czi" secondAttribute="bottom" constant="8" id="Sr4-Gr-weW"/>
                     <constraint firstItem="Jjr-Fg-Wf3" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" constant="8" id="Tom-oM-Tyh"/>
-                    <constraint firstItem="DXp-eX-hy2" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="Jjr-Fg-Wf3" secondAttribute="trailing" constant="15" id="U60-8a-5G6"/>
                     <constraint firstItem="2hF-gt-tRm" firstAttribute="trailing" secondItem="H2p-sc-9uM" secondAttribute="trailingMargin" id="c8W-WW-aqj"/>
+                    <constraint firstItem="DXp-eX-hy2" firstAttribute="leading" secondItem="pep-Lm-OLY" secondAttribute="trailing" constant="5" id="lXN-7p-Fbr"/>
                     <constraint firstItem="Jjr-Fg-Wf3" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" id="nD9-ne-K36"/>
                     <constraint firstItem="2hF-gt-tRm" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="WFb-4Q-Czi" secondAttribute="trailing" constant="15" id="nbI-f9-Wgt"/>
                     <constraint firstItem="DXp-eX-hy2" firstAttribute="trailing" secondItem="H2p-sc-9uM" secondAttribute="trailingMargin" id="nxZ-2K-7kL"/>
+                    <constraint firstItem="pep-Lm-OLY" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="Jjr-Fg-Wf3" secondAttribute="trailing" constant="15" id="oMj-nE-To8"/>
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>
                 <outlet property="firstLabel" destination="Jjr-Fg-Wf3" id="Prb-8V-Vqh"/>
                 <outlet property="fourthLabel" destination="2hF-gt-tRm" id="Tj5-ZJ-aKP"/>
+                <outlet property="secondAccessorLabel" destination="pep-Lm-OLY" id="iTQ-te-DLk"/>
                 <outlet property="secondLabel" destination="DXp-eX-hy2" id="12l-cn-fkc"/>
                 <outlet property="thirdLabel" destination="WFb-4Q-Czi" id="5gI-BA-ycq"/>
             </connections>

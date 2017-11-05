@@ -1,17 +1,17 @@
 //
-//  ViewController.swift
+//  BooksViewController.swift
 //  BookShelf
 //
-//  Created by Andrea Altea on 04/11/17.
+//  Created by Andrea Altea on 05/11/17.
 //  Copyright © 2017 Studiout. All rights reserved.
 //
 
 import UIKit
 
-class AuthorsController: UIViewController {
+class BooksViewController: UIViewController {
 
     struct Segue {
-        static let books = "Books"
+        static let bookDetail = "BookDetail"
     }
     
     @IBOutlet weak var waitingContainer: UIView!
@@ -20,7 +20,7 @@ class AuthorsController: UIViewController {
     @IBOutlet weak var orderSelector: SwitchControl!
     @IBOutlet weak var tableView: UITableView!
     
-    var dataSource: AuthorsDataSource?
+    var dataSource: BooksDataSouce?
     
     var waitingContents:Bool = true {
         
@@ -42,80 +42,85 @@ class AuthorsController: UIViewController {
         }
     }
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        self.setupUI()
-        self.setupDataSource()
-        
-        self.orderSelector.addTarget(self, action: #selector(didUpdateSort(sender:)), for: .valueChanged)
-        self.didUpdateSort(sender: nil)
-    }
-
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        
-        if let selectedRow = self.tableView.indexPathForSelectedRow {
-            self.tableView.deselectRow(at: selectedRow, animated: true)
+    var author: Author? {
+        didSet {
+            guard let author = self.author else {
+                return
+            }
+            
+            self.title = author.name + " " + author.surname
+            if self.isViewLoaded {
+                self.didUpdateSort(sender: nil)
+            }
         }
     }
     
-    private func setupUI() {
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        self.setupUI()
+        self.setupDataSource()
+        
+        self.didUpdateSort(sender: nil)
+    }
+    
+    func setupUI() {
         
         self.waitingContainer.layer.cornerRadius = 10
         self.waitingContainer.clipsToBounds = true
         
-        self.orderSelector.statuses = AuthorSorter.SortParameter.list
+        self.orderSelector.statuses = BookSorter.SortParameter.list
+
     }
     
-    private func setupDataSource() {
-
+    func setupDataSource() {
+        
         let cellIdentifier = "DetailTableViewCell"
         self.tableView.register(UINib(nibName: cellIdentifier, bundle: Bundle.main), forCellReuseIdentifier: cellIdentifier)
         self.tableView.estimatedRowHeight = 100
         self.tableView.rowHeight = UITableViewAutomaticDimension
         
-        self.dataSource = AuthorsDataSource(with: cellIdentifier, tableView: self.tableView)
+        self.dataSource =  BooksDataSouce(with: cellIdentifier, tableView: self.tableView)
     }
     
     @objc private func didUpdateSort(sender: Any?) {
         
         self.waitingContents = true
         
-        guard let parameter = AuthorSorter.SortParameter(rawValue: self.orderSelector.selectedStatus) else {
+        guard let parameter = BookSorter.SortParameter(rawValue: self.orderSelector.selectedStatus),
+            let author = self.author else {
             return
         }
         
-        Model.shared.getAuthors { (authors, error) in
+        Model.shared.getBooks(for: author) { (books, error) in
             self.waitingContents = false
-            guard let authors = authors else {
+            guard let books = books else {
                 return
             }
             
-            let sortedAuthors = AuthorSorter.sortedAuthors(authors, for: parameter)
-            self.dataSource?.items = sortedAuthors
+            let sortedBooks = BookSorter.sortedBooks(books, for: parameter)
+            self.dataSource?.items = sortedBooks
         }
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        
-        guard segue.identifier == Segue.books,
-            let indexPath = sender as? IndexPath else {
+        guard segue.identifier == Segue.bookDetail,
+            let indexPath = sender as? IndexPath,
+            let bookDetailController = segue.destination as? BookDetailViewController else {
             return
         }
         
-        guard let viewController = segue.destination as? BooksViewController,
-            let author = self.dataSource?.items[indexPath.item] else {
-                return
-        }
-        
-        viewController.author = author
+        bookDetailController.author = self.author
+        bookDetailController.book = self.dataSource?.items[indexPath.item]
     }
 }
 
-extension AuthorsController: UITableViewDelegate {
-
+extension BooksViewController: UITableViewDelegate {
+    
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        self.performSegue(withIdentifier: Segue.books, sender: indexPath)
-    }    
+        
+        self.performSegue(withIdentifier: Segue.bookDetail, sender: indexPath)
+        self.tableView.deselectRow(at: indexPath, animated: true)
+    }
+    
 }
-

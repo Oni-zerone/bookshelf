@@ -10,11 +10,18 @@ import UIKit
 
 class Model: NSObject {
 
+    private static let domain = "Model"
+    
     static let shared: Model = Model()
     private static let queue = DispatchQueue(label: "it.studiout.bookshelf.modelQueue")
 
     private var authorsCache: Set<Author>?
-    
+    private var booksCache = Dictionary<Int, Set<Book>>()
+}
+
+
+typealias AuthorsModel = Model
+extension AuthorsModel {
     func getAuthors(completion: @escaping (Set<Author>?, Error?) -> Void) {
         
         Model.queue.async {
@@ -47,7 +54,7 @@ class Model: NSObject {
             self.loadAuthors(in: count, completion: { (authors) in
                 
                 guard authors.count > 0 else {
-                    completion(nil, NSError.invalidContent(String(describing: self.classForCoder)))
+                    completion(nil, NSError.invalidContent(Model.domain))
                     return
                 }
                 
@@ -83,6 +90,54 @@ class Model: NSObject {
         
         dispatchGroup.notify(queue: DispatchQueue.global(qos: .background)) {
             completion(resultAuthors)
+        }
+    }
+}
+
+typealias BooksModel = Model
+extension BooksModel {
+    
+    func getBooks(for author: Author, completion: @escaping (Set<Book>?, Error?) -> Void) {
+     
+        Model.queue.async {
+            
+            if let books = self.booksCache[author.id] {
+                DispatchQueue.main.async {
+                    completion(books, nil)
+                }
+                return
+            }
+            
+            self.loadBooks(for: author, completion: { (books, error) in
+                
+                if let books = books {
+                    self.booksCache[author.id] = books
+                }
+                DispatchQueue.main.async {
+                    completion(books, nil)
+                }
+            })
+        }
+    }
+    
+    private func loadBooks(for author:Author, completion: @escaping (Set<Book>?, Error?) -> Void) {
+        
+        APIManager.getBooks(for: author.id) { (authorId, books, error) in
+            
+            if let error = error {
+                completion(nil, error)
+                return
+            }
+            
+            guard author.id == authorId,
+                let books = books else {
+                completion(nil, NSError.invalidContent(Model.domain))
+                return
+            }
+            
+            var booksSet = Set<Book>()
+            booksSet.insertContents(of: books)
+            completion(booksSet, nil)
         }
     }
 }

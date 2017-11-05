@@ -19,11 +19,15 @@ class LoginManager: RequestManager {
             
             return success(false, NSError.invalidPath(ErrorDomain))
         }
-        let request = LoginRequest(url: url, username: username, password: password)
-        
+
+        guard let request = LoginRequest(url: url, username: username, password: password) else {
+            success(false, NSError.invalidContent(LoginManager.ErrorDomain))
+            return
+        }
         let task = LoginManager.config.session.dataTask(with: request as URLRequest, completionHandler: self.responseDictionaryCheck({ (response, error) in
             
-            success(response?["success"], error)
+            let successValue = response?["success"] as? Bool ?? false
+            success(successValue, error)
         }))
         task.resume()
     }

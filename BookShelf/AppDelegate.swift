@@ -18,6 +18,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         //Setup APIManager Config
         APIManager.config = RequestManagerConfiguration(scheme: "http", host: "www.studiout.it", basePath: "bookshelf")
         LoginManager.config = RequestManagerConfiguration(scheme: "http", host: "www.studiout.it", basePath: "bookshelf")
+        
+        return true
     }
 
     func applicationWillResignActive(_ application: UIApplication) {

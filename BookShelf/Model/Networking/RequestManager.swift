@@ -16,7 +16,7 @@ struct RequestManagerConfiguration {
     
     let session: URLSession
     
-    init(scheme: String = "", host: String = "", basePath: = "", session: URLSession = URLSession(configuration: URLSessionConfiguration.default)) {
+    init(scheme: String = "", host: String = "", basePath: String = "", session: URLSession = URLSession(configuration: URLSessionConfiguration.default)) {
         self.scheme = scheme
         self.host = host
         self.basePath = basePath

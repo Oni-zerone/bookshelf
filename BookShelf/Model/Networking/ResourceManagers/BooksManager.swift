@@ -12,7 +12,7 @@ typealias BooksManager = APIManager
 
 extension APIManager {
     
-    static func getBooks(for authorId: Int, session: URLSession = Config.session, completion: @escaping(Int, Array<Book>?, Error?) -> ()) {
+    static func getBooks(for authorId: Int, session: URLSession = APIManager.config.session, completion: @escaping(Int, Array<Book>?, Error?) -> ()) {
         
         guard let URL = APIManager.URLForResource(resourcePath: "books.php", with: ["author" : "\(authorId)"]) else {
             

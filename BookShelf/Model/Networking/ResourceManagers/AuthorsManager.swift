@@ -12,7 +12,7 @@ typealias AuthorsManager = APIManager
 
 extension AuthorsManager {
     
-    static func getAuthors(for page: Int = 0, session: URLSession = Config.session, completion: @escaping(Int, Array<Author>?, Error?) -> ()) {
+    static func getAuthors(for page: Int = 0, session: URLSession = AuthorsManager.config.session, completion: @escaping(Int, Array<Author>?, Error?) -> ()) {
         
         guard let URL = APIManager.URLForResource(resourcePath: "authors.php", with: ["page" : "\(page)"]) else {
             
@@ -42,7 +42,7 @@ extension AuthorsManager {
         task.resume()
     }
     
-    static func getAuthorsPageCount(session: URLSession = Config.session, completion: @escaping(Int, Error?) -> ()) {
+    static func getAuthorsPageCount(session: URLSession = AuthorsManager.config.session, completion: @escaping(Int, Error?) -> ()) {
         
         guard let URL = APIManager.URLForResource(resourcePath: "authors_count.php") else {
             

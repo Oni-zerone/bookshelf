@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13196" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="h9M-ZP-hfA">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13196" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="ztY-o7-q5k">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -89,6 +89,71 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3vI-Ov-4Q5" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="792.79999999999995" y="-188.45577211394306"/>
+        </scene>
+        <!--Login View Controller-->
+        <scene sceneID="lKU-wy-0ZG">
+            <objects>
+                <viewController id="ztY-o7-q5k" customClass="LoginViewController" customModule="BookShelf" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="fgW-e5-RjK">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="SHELF" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oqv-yD-cFs">
+                                <rect key="frame" x="20" y="60" width="335" height="67"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="56"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Username" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="bPY-v2-jDD">
+                                <rect key="frame" x="30" y="187" width="315" height="30"/>
+                                <color key="backgroundColor" red="0.7843137255" green="0.78039215689999997" blue="0.80000000000000004" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" textContentType="username"/>
+                                <connections>
+                                    <outlet property="delegate" destination="ztY-o7-q5k" id="Bms-RY-D6b"/>
+                                </connections>
+                            </textField>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Ko2-2E-iZp">
+                                <rect key="frame" x="30" y="247" width="315" height="30"/>
+                                <color key="backgroundColor" red="0.7843137255" green="0.78039215689999997" blue="0.80000000000000004" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" returnKeyType="go" secureTextEntry="YES" textContentType="password"/>
+                                <connections>
+                                    <outlet property="delegate" destination="ztY-o7-q5k" id="4xb-kN-Rrp"/>
+                                </connections>
+                            </textField>
+                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="59H-mg-lXp">
+                                <rect key="frame" x="177" y="337" width="20" height="20"/>
+                            </activityIndicatorView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="Ko2-2E-iZp" firstAttribute="leading" secondItem="qSk-bX-uxy" secondAttribute="leading" constant="30" id="0m6-z6-gYu"/>
+                            <constraint firstItem="59H-mg-lXp" firstAttribute="centerX" secondItem="fgW-e5-RjK" secondAttribute="centerX" id="2PW-uO-kA4"/>
+                            <constraint firstItem="59H-mg-lXp" firstAttribute="top" secondItem="Ko2-2E-iZp" secondAttribute="bottom" constant="60" id="EFB-uS-gU3"/>
+                            <constraint firstItem="bPY-v2-jDD" firstAttribute="top" secondItem="oqv-yD-cFs" secondAttribute="bottom" constant="60" id="TAF-D3-HI1"/>
+                            <constraint firstItem="qSk-bX-uxy" firstAttribute="trailing" secondItem="Ko2-2E-iZp" secondAttribute="trailing" constant="30" id="Wts-Ve-1q7"/>
+                            <constraint firstItem="qSk-bX-uxy" firstAttribute="trailing" secondItem="oqv-yD-cFs" secondAttribute="trailing" constant="20" id="Xs7-kK-hKc"/>
+                            <constraint firstItem="Ko2-2E-iZp" firstAttribute="top" secondItem="bPY-v2-jDD" secondAttribute="bottom" constant="30" id="mmb-3a-CZ0"/>
+                            <constraint firstItem="oqv-yD-cFs" firstAttribute="leading" secondItem="qSk-bX-uxy" secondAttribute="leading" constant="20" id="r7w-aN-jgZ"/>
+                            <constraint firstItem="bPY-v2-jDD" firstAttribute="leading" secondItem="qSk-bX-uxy" secondAttribute="leading" constant="30" id="rG0-KO-AYw"/>
+                            <constraint firstItem="oqv-yD-cFs" firstAttribute="top" secondItem="qSk-bX-uxy" secondAttribute="top" constant="40" id="rZD-C4-Rbd"/>
+                            <constraint firstItem="qSk-bX-uxy" firstAttribute="trailing" secondItem="bPY-v2-jDD" secondAttribute="trailing" constant="30" id="xe7-r0-n2b"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="qSk-bX-uxy"/>
+                    </view>
+                    <connections>
+                        <outlet property="loginIndicator" destination="59H-mg-lXp" id="4at-SF-hmE"/>
+                        <outlet property="passwordField" destination="Ko2-2E-iZp" id="kDk-Wz-kra"/>
+                        <outlet property="usernameField" destination="bPY-v2-jDD" id="hyW-Nj-JcX"/>
+                        <segue destination="h9M-ZP-hfA" kind="presentation" identifier="ShowAuthors" modalTransitionStyle="flipHorizontal" id="cxr-GQ-CgF"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="nwB-KZ-R34" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1514.4000000000001" y="-188.45577211394306"/>
         </scene>
         <!--Books View Controller-->
         <scene sceneID="cr6-xR-VAK">

@@ -17,17 +17,20 @@ class LoginManager: RequestManager {
         
         guard let url = self.URLForResource(resourcePath: "login.php") else {
             
-            return success(false, NSError.invalidPath(ErrorDomain))
-        }
-
-        guard let request = LoginRequest(url: url, username: username, password: password) else {
-            success(false, NSError.invalidContent(LoginManager.ErrorDomain))
+            DispatchQueue.main.async {
+                success(false, NSError.invalidPath(ErrorDomain))
+            }
             return
         }
+
+        let request = LoginRequest(url: url, username: username, password: password)
         let task = LoginManager.config.session.dataTask(with: request as URLRequest, completionHandler: self.responseDictionaryCheck({ (response, error) in
+
+            DispatchQueue.main.async {
+                let successValue = response?["success"] as? Bool ?? false
+                success(successValue, error)
+            }
             
-            let successValue = response?["success"] as? Bool ?? false
-            success(successValue, error)
         }))
         task.resume()
     }

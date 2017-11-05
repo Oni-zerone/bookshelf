@@ -10,17 +10,12 @@ import Foundation
 
 class LoginRequest: NSMutableURLRequest {
     
-    init?(url URL: URL, username: String, password: String) {
+    init(url URL: URL, username: String, password: String) {
         super.init(url: URL, cachePolicy: .reloadIgnoringCacheData, timeoutInterval: 0)
         
         self.initialize()
-        do {
-            self.httpBody = try JSONSerialization.data(withJSONObject: ["Username" : username,
-                                                                        "Password" : password],
-                                                       options: .sortedKeys)
-        } catch  {
-            return nil
-        }
+        let postString = "Username=\(username)&Password=\(password)"
+        self.httpBody = postString.data(using: .utf8)
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -32,7 +27,7 @@ class LoginRequest: NSMutableURLRequest {
     private func initialize() {
         
         self.addValue("application/json", forHTTPHeaderField: "Accept")
-        self.addValue("application/json", forHTTPHeaderField: "Content-Type")
+        self.addValue("application/x-www-form-urlencoded", forHTTPHeaderField: "Content-Type")
         self.httpMethod = "POST"
     }
 }

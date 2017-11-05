@@ -25,7 +25,7 @@
             </objects>
             <point key="canvasLocation" x="-545" y="-188"/>
         </scene>
-        <!--Authors Controller-->
+        <!--Autori-->
         <scene sceneID="H20-mv-CSq">
             <objects>
                 <viewController id="1QP-z9-PcS" customClass="AuthorsController" customModule="BookShelf" customModuleProvider="target" sceneMemberID="viewController">
@@ -33,10 +33,10 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5dv-4p-3Wk">
-                                <rect key="frame" x="137" y="104" width="100" height="100"/>
+                            <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="5dv-4p-3Wk">
+                                <rect key="frame" x="137" y="216" width="100" height="100"/>
                                 <subviews>
-                                    <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" animating="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="DX8-qg-uLL">
+                                    <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" ambiguous="YES" animating="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="DX8-qg-uLL">
                                         <rect key="frame" x="31" y="31" width="37" height="37"/>
                                     </activityIndicatorView>
                                 </subviews>
@@ -48,23 +48,58 @@
                                     <constraint firstAttribute="width" constant="100" id="wxH-PZ-qbT"/>
                                 </constraints>
                             </view>
+                            <tableView hidden="YES" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="EBj-Jx-zVR">
+                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <connections>
+                                    <outlet property="delegate" destination="1QP-z9-PcS" id="LeB-Ec-iLf"/>
+                                </connections>
+                            </tableView>
+                            <view contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Ax0-P5-MVf" customClass="SwitchControl" customModule="BookShelf" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="64" width="375" height="37"/>
+                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="5dv-4p-3Wk" firstAttribute="top" secondItem="daU-2u-D8i" secondAttribute="top" constant="40" id="aHE-0u-r2B"/>
+                            <constraint firstItem="5dv-4p-3Wk" firstAttribute="top" secondItem="Ax0-P5-MVf" secondAttribute="bottom" constant="20" id="LGV-Ty-YpB"/>
+                            <constraint firstItem="EBj-Jx-zVR" firstAttribute="leading" secondItem="daU-2u-D8i" secondAttribute="leading" id="MqC-C9-zw5"/>
+                            <constraint firstItem="EBj-Jx-zVR" firstAttribute="trailing" secondItem="daU-2u-D8i" secondAttribute="trailing" id="Sva-Xg-x5N"/>
+                            <constraint firstItem="Ax0-P5-MVf" firstAttribute="trailing" secondItem="daU-2u-D8i" secondAttribute="trailing" id="WQG-so-Rap"/>
+                            <constraint firstItem="EBj-Jx-zVR" firstAttribute="top" secondItem="Ax0-P5-MVf" secondAttribute="bottom" id="g3w-7n-mhS"/>
+                            <constraint firstItem="Ax0-P5-MVf" firstAttribute="top" secondItem="daU-2u-D8i" secondAttribute="top" id="hAz-oK-6nf"/>
+                            <constraint firstItem="EBj-Jx-zVR" firstAttribute="bottom" secondItem="daU-2u-D8i" secondAttribute="bottom" id="r6G-bP-48E"/>
                             <constraint firstItem="5dv-4p-3Wk" firstAttribute="centerX" secondItem="yke-vR-XmA" secondAttribute="centerX" id="u1j-If-p2D"/>
+                            <constraint firstItem="Ax0-P5-MVf" firstAttribute="leading" secondItem="daU-2u-D8i" secondAttribute="leading" id="wUr-tR-GTs"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="daU-2u-D8i"/>
                     </view>
-                    <navigationItem key="navigationItem" id="Kz7-BL-ySD"/>
+                    <navigationItem key="navigationItem" title="Autori" id="Kz7-BL-ySD"/>
                     <connections>
+                        <outlet property="orderSelector" destination="Ax0-P5-MVf" id="deB-u1-ksd"/>
+                        <outlet property="tableView" destination="EBj-Jx-zVR" id="F8V-Pm-0FP"/>
                         <outlet property="waitingContainer" destination="5dv-4p-3Wk" id="4q2-fP-7Zl"/>
                         <outlet property="waitingIndicator" destination="DX8-qg-uLL" id="vHq-rj-r92"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3vI-Ov-4Q5" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="793" y="-188"/>
+            <point key="canvasLocation" x="792.79999999999995" y="-188.45577211394306"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="cr6-xR-VAK">
+            <objects>
+                <viewController id="qlm-yP-3u7" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="euq-TU-SGK">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="MSj-Eq-FLY"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="QdU-dB-yc3" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1788" y="-188"/>
         </scene>
     </scenes>
 </document>

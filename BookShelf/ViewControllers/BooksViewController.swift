@@ -61,6 +61,7 @@ class BooksViewController: UIViewController {
         self.setupUI()
         self.setupDataSource()
         
+        self.orderSelector.addTarget(self, action: #selector(didUpdateSort(sender:)), for: .valueChanged)
         self.didUpdateSort(sender: nil)
     }
     

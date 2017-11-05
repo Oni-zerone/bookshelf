@@ -166,7 +166,7 @@
                                 <rect key="frame" x="10" y="0.0" width="355" height="667"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="LTv-2K-Sz1">
-                                        <rect key="frame" x="0.0" y="0.0" width="355" height="536"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="355" height="544"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ci1-BJ-G7a">
                                                 <rect key="frame" x="8" y="8" width="32" height="32"/>
@@ -182,7 +182,7 @@
                                                     <constraint firstAttribute="width" constant="161" id="oq2-IR-v6g"/>
                                                 </constraints>
                                             </imageView>
-                                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="arz-45-7Qo">
+                                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="arz-45-7Qo">
                                                 <rect key="frame" x="248" y="115" width="20" height="20"/>
                                             </activityIndicatorView>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Titolo" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="anh-io-TCm">
@@ -324,7 +324,7 @@
                                             <constraint firstItem="arz-45-7Qo" firstAttribute="centerY" secondItem="KOB-sg-QQf" secondAttribute="centerY" id="Ffn-NU-8Fl"/>
                                             <constraint firstItem="vRX-ac-Rmy" firstAttribute="leading" secondItem="i32-04-6u2" secondAttribute="leading" id="I84-Rx-MLN"/>
                                             <constraint firstItem="Frz-N5-JlA" firstAttribute="leading" secondItem="i32-04-6u2" secondAttribute="leading" id="N5S-Oh-ZBf"/>
-                                            <constraint firstAttribute="bottom" secondItem="sxw-fb-SgI" secondAttribute="bottom" constant="8" id="NH8-h5-CGk"/>
+                                            <constraint firstAttribute="bottom" secondItem="sxw-fb-SgI" secondAttribute="bottom" constant="16" id="NH8-h5-CGk"/>
                                             <constraint firstItem="anh-io-TCm" firstAttribute="top" secondItem="KOB-sg-QQf" secondAttribute="bottom" constant="16" id="O6v-4c-r4Z"/>
                                             <constraint firstItem="rZf-49-S8X" firstAttribute="leading" secondItem="i32-04-6u2" secondAttribute="leading" id="PLO-zh-fl6"/>
                                             <constraint firstItem="BVv-fb-N2F" firstAttribute="top" secondItem="b7N-8A-paV" secondAttribute="bottom" constant="15" id="PUV-xy-42W"/>
@@ -347,7 +347,7 @@
                                             <constraint firstItem="sxw-fb-SgI" firstAttribute="top" secondItem="6cB-5V-jTj" secondAttribute="bottom" constant="8" id="h0W-fF-5iX"/>
                                             <constraint firstItem="vRX-ac-Rmy" firstAttribute="leading" secondItem="p1f-dk-oys" secondAttribute="leading" id="jvt-fV-bUV"/>
                                             <constraint firstItem="rZf-49-S8X" firstAttribute="top" secondItem="i32-04-6u2" secondAttribute="bottom" constant="8" id="k51-Pt-URt"/>
-                                            <constraint firstAttribute="bottom" secondItem="mfb-iJ-bil" secondAttribute="bottom" constant="8" id="kTt-d6-oG2"/>
+                                            <constraint firstAttribute="bottom" secondItem="mfb-iJ-bil" secondAttribute="bottom" constant="16" id="kTt-d6-oG2"/>
                                             <constraint firstItem="7ub-6w-Ytv" firstAttribute="top" secondItem="f2T-df-Lkc" secondAttribute="bottom" constant="8" id="ku7-Qu-m61"/>
                                             <constraint firstItem="flZ-oB-fH5" firstAttribute="leading" secondItem="KOB-sg-QQf" secondAttribute="leading" constant="60" id="lmn-Nj-HeV"/>
                                             <constraint firstItem="wIf-xX-2Vz" firstAttribute="leading" secondItem="f2T-df-Lkc" secondAttribute="leading" id="nj8-Gv-Gw0"/>
@@ -390,6 +390,8 @@
                         <outlet property="containerView" destination="9f8-P5-g4c" id="1IF-5o-qvW"/>
                         <outlet property="contentView" destination="LTv-2K-Sz1" id="NyO-Kb-DE0"/>
                         <outlet property="discountLabel" destination="Frz-N5-JlA" id="yfb-vO-RUm"/>
+                        <outlet property="imageActivityIndicator" destination="arz-45-7Qo" id="LDZ-MM-NpL"/>
+                        <outlet property="imageView" destination="KOB-sg-QQf" id="Nq1-T7-jCn"/>
                         <outlet property="infoLabel" destination="7pO-Ym-hTb" id="o1L-fF-asF"/>
                         <outlet property="isbnLabel" destination="rZf-49-S8X" id="qFP-gK-Thm"/>
                         <outlet property="pagesLabel" destination="sxw-fb-SgI" id="JUc-tn-MMt"/>

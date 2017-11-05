@@ -7,8 +7,12 @@
 //
 
 import UIKit
+import AlamofireImage
 
 class BookDetailViewController: UIViewController {
+    
+    @IBOutlet weak var imageActivityIndicator: UIActivityIndicatorView!
+    @IBOutlet weak var imageView: UIImageView!
     
     @IBOutlet weak var containerView: UIScrollView!
     @IBOutlet weak var contentView: UIView!
@@ -70,6 +74,8 @@ class BookDetailViewController: UIViewController {
             return
         }
         
+        self.isbnLabel.text = "\(book.ISBN)"
+        
         self.authorLabel.text = author.surname + " " + author.name
         self.titleLabel.text = book.title
         
@@ -80,5 +86,21 @@ class BookDetailViewController: UIViewController {
         self.yearLabel.text = "\(book.year)"
         self.publisherLabel.text = book.publisher
         self.seriesLabel.text = book.series
+        
+        guard let imageURL = book.imageURL else {
+            return
+        }
+        
+        self.imageActivityIndicator.startAnimating()
+        self.imageView.af_setImage(withURL: imageURL, placeholderImage: nil) { (imageResponse) in
+            
+            self.imageView.image = imageResponse.value
+            self.imageView.layer.shadowColor = UIColor.black.cgColor
+            self.imageView.layer.shadowOffset = CGSize(width: 0, height: 5)
+            self.imageView.layer.shadowRadius = 8
+            self.imageView.layer.shadowOpacity = 0.4
+            
+            self.imageActivityIndicator.stopAnimating()
+        }
     }
 }
